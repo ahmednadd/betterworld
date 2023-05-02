@@ -18,11 +18,11 @@
           bottom: 0px;
           left: 0px;
           z-index: 9999;
-          height: 280px;
+          height: 580px;
           width: 100%;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
-          padding: 10px 0px 10px 10px;
+          padding: 16px;
           animation: slideUpLong 300ms;
           box-sizing: border-box;
           box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
@@ -64,24 +64,35 @@
      height: 100%;
      opacity: 0;
      animation-fill-mode: forwards;
+     @media screen and (max-width: variables.$small) {
+          flex-direction: column;
+          justify-content: space-around;
+     }
      &-img {
+          position: absolute;
+          top: 0;
+          left: 0;
           min-width: 35%;
           max-width: 35%;
           height: 100%;
           filter: blur(100px);
           -webkit-backdrop-filter: blur(100px);
+          @media screen and (max-width: variables.$small) {
+               height: 35%;
+               min-width: 100%;
+          }
      }
+
      img {
           mix-blend-mode: color-burn;
-          position: absolute;
-          left: 0;
           object-fit: contain;
           height: 100%;
           max-width: 35%;
           @media screen and (max-width: variables.$small) {
                border-radius: 12px;
-               object-fit: cover;
-               max-width: 35%;
+               object-fit: contain;
+               max-height: 35%;
+               max-width: 100%;
                -webkit-transform-style: preserve-3d;
           }
      }
@@ -95,9 +106,10 @@
           flex-direction: column;
           justify-content: space-between;
           @media screen and (max-width: variables.$small) {
-               margin: 0 0 0 10px;
+               margin: 0;
                justify-content: space-between;
-               padding: 3px 5px;
+               padding: 0;
+               row-gap: 20px;
           }
           h1 {
                @media screen and (max-width: variables.$small) {
@@ -186,7 +198,6 @@
                          padding: 8px 12px;
                          font-size: 10px;
                          height: 30px;
-                         margin-right: 20px;
                     }
                     &:nth-child(1) {
                          margin-right: 20px;
@@ -194,9 +205,6 @@
                          @media screen and (max-width: variables.$medium) {
                               margin-right: 0px;
                               margin-bottom: 8px;
-                         }
-                         @media screen and (max-width: variables.$small) {
-                              margin-right: 20px;
                          }
                     }
                }
