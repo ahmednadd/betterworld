@@ -1,0 +1,68 @@
+@use '../../utils/variables';
+
+.product-card-wrapper {
+     height: 278px;
+     border-radius: 12px;
+     background-color: var(--bg-color-2);
+     box-shadow: 0 10px 20px rgb(0 0 0 / 4%);
+     padding: 10px;
+     box-sizing: border-box;
+     transition: all 200ms ease-in;
+     cursor: pointer;
+     animation: slideUp 200ms;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     /* align-items: center; */
+     justify-content: space-between;
+
+     @media screen and (max-width: variables.$small) {
+          -webkit-transform-style: preserve-3d;
+          height: 180px;
+          padding: 10px;
+     }
+     > img {
+          border-radius: 12px;
+          width: 100%;
+          height: 200px;
+          object-fit: contain;
+          @media screen and (max-width: variables.$small) {
+               height: 80%;
+               -webkit-transform-style: preserve-3d;
+          }
+     }
+     span {
+          font-weight: 700;
+          font-size: 12px;
+          display: block;
+          margin: 8px 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          color: var(--text-color);
+          @media screen and (max-width: variables.$small) {
+               font-size: 8px;
+               margin: 0;
+          }
+     }
+
+     &-controls {
+          position: absolute;
+          left: -18px;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          transform: scale(0.5);
+          @media screen and (max-width: variables.$small) {
+               transform: scale(0.4);
+               left: -25px;
+               bottom: -5px;
+          }
+          svg {
+               fill: var(--text-color);
+               &:nth-child(1) {
+                    margin-right: 8px;
+               }
+          }
+     }
+}

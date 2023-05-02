@@ -1,0 +1,213 @@
+@use '../../utils/variables';
+
+.product-details-container {
+     position: relative;
+     width: 100%;
+     border-radius: 12px;
+     grid-column: 1/-1;
+     background-color: var(--bg-color-2);
+     // height: 400px;
+     overflow: hidden;
+     animation: turnOn 500ms;
+     grid-row: span 2;
+     padding: 32px;
+     box-sizing: border-box;
+     @media screen and (max-width: variables.$small) {
+          -webkit-transform-style: preserve-3d;
+          position: fixed;
+          bottom: 0px;
+          left: 0px;
+          z-index: 9999;
+          height: 280px;
+          width: 100%;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          padding: 10px 0px 10px 10px;
+          animation: slideUpLong 300ms;
+          box-sizing: border-box;
+          box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
+     }
+     @media screen and (min-width: variables.$medium) {
+          // height: 380px;
+     }
+     @media screen and (min-width: variables.$xlarge) {
+          // height: 450px;
+     }
+     @media screen and (min-width: variables.$xxlarge) {
+          // height: 500px;
+     }
+     svg {
+          cursor: pointer;
+          transform: scale(0.7);
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 99;
+          // display: none;
+          fill: var(--text-color);
+          @media screen and (max-width: variables.$small) {
+               display: block;
+               position: absolute;
+               top: 0;
+               right: 0;
+               transform: scale(0.4);
+               z-index: 9;
+          }
+     }
+}
+
+.product-details-wrapper {
+     position: relative;
+     animation: fadeIn 200ms;
+     animation-delay: 500ms;
+     display: flex;
+     height: 100%;
+     opacity: 0;
+     animation-fill-mode: forwards;
+     &-img {
+          min-width: 35%;
+          max-width: 35%;
+          height: 100%;
+          filter: blur(100px);
+          -webkit-backdrop-filter: blur(100px);
+     }
+     img {
+          mix-blend-mode: color-burn;
+          position: absolute;
+          left: 0;
+          object-fit: contain;
+          height: 100%;
+          max-width: 35%;
+          @media screen and (max-width: variables.$small) {
+               border-radius: 12px;
+               object-fit: cover;
+               max-width: 35%;
+               -webkit-transform-style: preserve-3d;
+          }
+     }
+     &-content {
+          animation: slideUp 200ms;
+          animation-delay: 700ms;
+          opacity: 0;
+          animation-fill-mode: forwards;
+          margin: 0px 0 0px 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          @media screen and (max-width: variables.$small) {
+               margin: 0 0 0 10px;
+               justify-content: space-between;
+               padding: 3px 5px;
+          }
+          h1 {
+               @media screen and (max-width: variables.$small) {
+                    width: 85%;
+               }
+          }
+          &-rating {
+               width: 120px;
+               background-color: var(--bg-color-3);
+               height: 8px;
+               border-radius: 8px;
+               position: relative;
+               @media screen and (max-width: variables.$small) {
+                    height: 5px;
+                    width: 100px;
+               }
+               > div {
+                    animation: fillIn 500ms;
+                    animation-delay: 700ms;
+                    border-radius: 8px;
+                    background-color: var(--text-color-2);
+                    height: 100%;
+               }
+               > span {
+                    position: absolute;
+                    right: -65px;
+                    bottom: -3px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: var(--text-color);
+                    @media screen and (max-width: variables.$small) {
+                         right: -50px;
+                         font-size: 12px;
+                    }
+               }
+          }
+          ul {
+               li {
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    color: var(--text-color-light);
+                    @media screen and (max-width: variables.$small) {
+                         margin-top: 0;
+                         font-size: 10px;
+                    }
+                    span {
+                         color: var(--text-color);
+                         width: 150px;
+                         display: inline-block;
+                         @media screen and (max-width: variables.$small) {
+                              width: 100px;
+                         }
+                    }
+               }
+          }
+          > span {
+               display: block;
+               width: 80%;
+               font-weight: 600;
+               font-size: 14px;
+               color: var(--text-color-light);
+               @media screen and (max-width: variables.$small) {
+                    font-size: 10px;
+                    width: 98%;
+                    height: 40px;
+                    overflow: hidden;
+               }
+          }
+          &-btn {
+               display: flex;
+               @media screen and (max-width: variables.$medium) {
+                    flex-direction: column;
+               }
+               button {
+                    height: 38px;
+                    box-sizing: border-box;
+                    text-align: center;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    width: 155px;
+                    @media screen and (max-width: variables.$small) {
+                         height: auto;
+                         width: auto;
+                         padding: 8px 12px;
+                         font-size: 10px;
+                         height: 30px;
+                         margin-right: 20px;
+                    }
+                    &:nth-child(1) {
+                         margin-right: 20px;
+
+                         @media screen and (max-width: variables.$medium) {
+                              margin-right: 0px;
+                              margin-bottom: 8px;
+                         }
+                         @media screen and (max-width: variables.$small) {
+                              margin-right: 20px;
+                         }
+                    }
+               }
+               .bg-btn {
+                    background-color: var(--text-color-2);
+                    color: var(--bg-color-2);
+               }
+               .outline-btn {
+                    color: var(--text-color-2);
+                    border: 1px solid var(--text-color-2);
+               }
+          }
+     }
+}

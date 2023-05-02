@@ -1,0 +1,47 @@
+@use '../../utils/variables';
+
+.navbar-wrapper {
+    width: 280px;
+    border-right: 1px solid rgba(145, 158, 171, 0.24);
+    height: 100vh;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 52px 0;
+    border-right-style: dashed;
+    &::-webkit-scrollbar {
+        display: none !important;
+        width: 5px;
+    }
+    @media screen and (max-width: variables.$small) {
+        padding: 32px 0;
+        box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
+        transition: all 200ms;
+        position: absolute;
+        left: -280px;
+        top: 0;
+        z-index: 999;
+        background-color: var(--bg-color);
+        overflow-y: scroll;
+    }
+    hr {
+        margin: 20px 0;
+        opacity: 0;
+        @media screen and (max-width: variables.$small) {
+            margin: 10px 0;
+        }
+    }
+    &-user {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 32px;
+        @media screen and (max-width: variables.$small) {
+            margin-bottom: 22px;
+        }
+        h3 {
+            margin-top: 10px;
+        }
+    }
+}

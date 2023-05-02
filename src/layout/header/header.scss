@@ -1,0 +1,56 @@
+@use '../../utils/variables';
+
+.header-wrapper {
+     position: fixed;
+     top: 0;
+     right: 0;
+     width: calc(100% - 280px);
+     height: 142px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 50px;
+     box-sizing: border-box;
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     z-index: 9;
+     background-color: var(--bg-color-light);
+     @media screen and (max-width: variables.$small) {
+          padding: 10px;
+          right: unset;
+          height: 60px;
+          left: 0;
+          width: 100%;
+     }
+     &-search {
+          width: 540px;
+          @media screen and (max-width: variables.$small) {
+               width: 100%;
+          }
+     }
+     &-utils {
+          display: flex;
+          align-items: center;
+          @media screen and (max-width: variables.$small) {
+               display: flex;
+               margin-left: 10px;
+          }
+          svg {
+               transform: scale(0.5);
+               cursor: pointer;
+               fill: var(--text-color);
+          }
+          img:nth-child(1) {
+               margin-right: 15px;
+          }
+          select {
+               text-transform: capitalize;
+               border: 1px dashed var(--text-color);
+               background-color: transparent;
+               outline: none;
+               padding: 5px 10px;
+               border-radius: 2px;
+               color: var(--text-color);
+          }
+     }
+}

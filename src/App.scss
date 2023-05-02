@@ -1,0 +1,191 @@
+@use './utils/variables';
+
+.App {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    &-mobile {
+        display: none;
+        @media screen and (max-width: variables.$small) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: var(--bg-color);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
+            svg {
+                transform: scale(0.8);
+                fill: var(--text-color);
+            }
+        }
+    }
+}
+
+svg {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0;
+    color: var(--text-color);
+    @media screen and (max-width: variables.$small) {
+        font-size: 18px;
+    }
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    color: var(--text-color);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+// Animations start
+
+@keyframes turnOn {
+    0% {
+        transform: scale(1, 0.3);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes turnOn {
+    0% {
+        -webkit-transform: scale(1, 0.3);
+        opacity: 0.3;
+    }
+
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@-webkit-keyframes slideUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+}
+@keyframes slideUpLong {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@-webkit-keyframes slideUpLong {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+}
+
+@keyframes fillIn {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fillIn {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// Animations End

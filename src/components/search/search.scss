@@ -1,0 +1,42 @@
+@use '../../utils/variables';
+
+.search-wrapper {
+    height: 45px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    @media screen and (max-width: variables.$small) {
+        height: 40px;
+    }
+    svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) scale(0.5);
+        cursor: pointer;
+        z-index: 9;
+        fill: var(--text-color);
+        &:nth-child(1) {
+            left: 0;
+        }
+        &:nth-child(2) {
+            right: 0;
+        }
+    }
+
+    input {
+        box-sizing: border-box;
+        height: 100%;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 300ms;
+        width: 40px;
+        background-color: transparent;
+        opacity: 0;
+        color: var(--text-color);
+        @media screen and (max-width: variables.$small) {
+            font-size: 12px;
+        }
+    }
+}

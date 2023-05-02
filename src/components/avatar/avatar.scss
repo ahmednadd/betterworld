@@ -1,0 +1,11 @@
+.avatar-wrapper {
+    border-radius: 100%;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+}
