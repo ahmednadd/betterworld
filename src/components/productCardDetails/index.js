@@ -10,7 +10,7 @@ const ProductCardDetails = (props) => {
      const { category, description, id, image, price, rating, title } = selectedCard;
 
      const getRatingWidth = () => {
-          return (rating?.rate / 10) * 100;
+          return (rating?.rate / 5) * 100;
      };
 
      return (
@@ -33,7 +33,7 @@ const ProductCardDetails = (props) => {
                                         width: getRatingWidth() + '%'
                                    }}
                               />
-                              <span>{rating?.rate} / 10</span>
+                              <span>{rating?.rate} / 5</span>
                          </div>
                          <ul>
                               <li>
