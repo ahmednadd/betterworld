@@ -10,7 +10,9 @@ const Navigation = ({
      selectedNavValue,
      getFilteredProducts,
      setSelectedCatValue,
-     selectedCatValue
+     selectedCatValue,
+     setSelectedCard,
+     setIsToggleMenu
 }) => {
      const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -18,8 +20,10 @@ const Navigation = ({
           setSelectedNavValue(value);
           setSelectedIndex(index);
           if (value !== 'Categories') {
+               setIsToggleMenu(false);
                getFilteredProducts('All');
                setSelectedCatValue('All');
+               setSelectedCard({});
           }
      };
 
@@ -46,6 +50,7 @@ const Navigation = ({
                                                                  <span
                                                                       key={index}
                                                                       onClick={() => {
+                                                                           setIsToggleMenu(false);
                                                                            getFilteredProducts(item);
                                                                            setSelectedCatValue(item);
                                                                       }}

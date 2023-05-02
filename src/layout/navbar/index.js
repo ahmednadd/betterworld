@@ -15,7 +15,9 @@ const Navbar = (props) => {
           selectedNavValue,
           getFilteredProducts,
           setSelectedCatValue,
-          selectedCatValue
+          selectedCatValue,
+          setSelectedCard,
+          setIsToggleMenu
      } = props;
      return (
           <nav
@@ -36,6 +38,8 @@ const Navbar = (props) => {
                     getFilteredProducts={getFilteredProducts}
                     setSelectedCatValue={setSelectedCatValue}
                     selectedCatValue={selectedCatValue}
+                    setSelectedCard={setSelectedCard}
+                    setIsToggleMenu={setIsToggleMenu}
                />
           </nav>
      );

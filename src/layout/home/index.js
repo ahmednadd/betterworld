@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProductCard from '../../components/productCard';
 import './home.scss';
 
@@ -6,9 +6,7 @@ import './home.scss';
 import ProductCardDetails from '../../components/productCardDetails';
 
 const Home = (props) => {
-     // const { newMovieData, handleClick, setNoOfCards, selectedCard } = props;
-     const { filteredProducts, isLoading } = props;
-     const [selectedCard, setSelectedCard] = useState({});
+     const { filteredProducts, isLoading, selectedCard, setSelectedCard } = props;
      return (
           <div className="home-wrapper">
                {isLoading ? (

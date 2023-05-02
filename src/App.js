@@ -21,6 +21,7 @@ function App() {
      const [isLoading, setIsLoading] = useState(false);
      const [selectedNavValue, setSelectedNavValue] = useState('home');
      const [selectedCatValue, setSelectedCatValue] = useState('All');
+     const [selectedCard, setSelectedCard] = useState({});
 
      useEffect(() => {
           getAllProducts();
@@ -85,8 +86,15 @@ function App() {
                     getFilteredProducts={getFilteredProducts}
                     setSelectedCatValue={setSelectedCatValue}
                     selectedCatValue={selectedCatValue}
+                    setSelectedCard={setSelectedCard}
+                    setIsToggleMenu={setIsToggleMenu}
                />
-               <Home filteredProducts={filteredProducts} isLoading={isLoading} />
+               <Home
+                    filteredProducts={filteredProducts}
+                    isLoading={isLoading}
+                    setSelectedCard={setSelectedCard}
+                    selectedCard={selectedCard}
+               />
                <div className="App-mobile" onClick={() => setIsToggleMenu(!isToggleMenu)}>
                     <MenuIcon />
                </div>
