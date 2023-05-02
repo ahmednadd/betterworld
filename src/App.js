@@ -12,6 +12,7 @@ import { ReactComponent as MenuIcon } from './assets/icons/menu.svg';
 import { baseUrl } from './utils/base';
 import { getReq } from './utils/api';
 
+let newFilteredData = [];
 function App() {
      const [productsData, setProductsData] = useState([]);
      const [filteredProducts, setFilteredProducts] = useState([]);
@@ -54,21 +55,24 @@ function App() {
      };
 
      const searchProductsByTitle = (title) => {
-          let realArray = [...filteredProducts];
+          let array = [...newFilteredData];
           if (!title) {
-               getFilteredProducts(selectedCatValue);
+               setFilteredProducts(array);
           }
-          realArray = realArray.filter((product) => product?.title.toLowerCase().includes(title.toLowerCase()));
-          setFilteredProducts(realArray);
+          array = array.filter((product) => product?.title.toLowerCase().includes(title.toLowerCase()));
+          setFilteredProducts([...array]);
      };
 
      const getFilteredProducts = (selectedValue) => {
-          if (productsData && selectedValue !== 'All')
-               setFilteredProducts(productsData.filter((product) => product.category === selectedValue));
-          else if (selectedValue === 'All') setFilteredProducts(productsData);
+          if (productsData && selectedValue !== 'All') {
+               let data = productsData.filter((product) => product.category === selectedValue);
+               newFilteredData = data;
+               setFilteredProducts(data);
+          } else if (selectedValue === 'All') {
+               newFilteredData = productsData;
+               setFilteredProducts(productsData);
+          }
      };
-
-     console.log(filteredProducts);
 
      return (
           <div className="App">

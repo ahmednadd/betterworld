@@ -17,6 +17,10 @@ const Navigation = ({
      const getSelectedNav = (index, value) => {
           setSelectedNavValue(value);
           setSelectedIndex(index);
+          if (value !== 'Categories') {
+               getFilteredProducts('All');
+               setSelectedCatValue('All');
+          }
      };
 
      return (

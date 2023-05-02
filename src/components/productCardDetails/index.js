@@ -6,7 +6,6 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
 
 const ProductCardDetails = (props) => {
      const { selectedCard, setSelectedCard } = props;
-     console.log('item', props);
 
      const { category, description, id, image, price, rating, title } = selectedCard;
 
