@@ -23,10 +23,12 @@ function App() {
      const [selectedCatValue, setSelectedCatValue] = useState('All');
      const [selectedCard, setSelectedCard] = useState({});
 
+     // to fetch all the products from the API when the component mounts for the first time
      useEffect(() => {
           getAllProducts();
      }, []);
 
+     // This is an asynchronous function that retrieves all the products from the API
      const getAllProducts = async () => {
           setIsLoading(true);
           let url = `${baseUrl}/products`;
@@ -41,6 +43,7 @@ function App() {
           }
      };
 
+     // This function takes the product data as input, and returns an array of all the unique categories in the products
      const getAllProductCategories = (data) => {
           if (data?.length) {
                const categories = [];
@@ -55,6 +58,8 @@ function App() {
           }
      };
 
+     // This function filters the product data by the input title and sets the filteredProducts state to the filtered array.
+     // If no title is given, it sets the filteredProducts state to the original array.
      const searchProductsByTitle = (title) => {
           let array = [...newFilteredData];
           if (!title) {
@@ -64,6 +69,8 @@ function App() {
           setFilteredProducts([...array]);
      };
 
+     // This function filters the products based on the selected category value and sets the filteredProducts state to the filtered array.
+     // If the selected value is 'All', it sets the filteredProducts state to the original array
      const getFilteredProducts = (selectedValue) => {
           if (productsData && selectedValue !== 'All') {
                let data = productsData.filter((product) => product.category === selectedValue);
