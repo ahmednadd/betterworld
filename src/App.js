@@ -37,6 +37,7 @@ function App() {
           });
           if (response) {
                setIsLoading(false);
+               newFilteredData = response;
                setProductsData(response);
                setFilteredProducts(response);
                getAllProductCategories(response);
