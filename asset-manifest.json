@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ahmednadd/betterworld/static/css/main.52e06cfe.css",
+    "main.js": "/ahmednadd/betterworld/static/js/main.de75aa31.js",
+    "static/js/787.9593ae11.chunk.js": "/ahmednadd/betterworld/static/js/787.9593ae11.chunk.js",
+    "static/media/user.webp": "/ahmednadd/betterworld/static/media/user.cfcb5d9cc929cdef9244.webp",
+    "static/media/cogs.svg": "/ahmednadd/betterworld/static/media/cogs.b06737d8c8a93744b27e48f179957baa.svg",
+    "static/media/home.svg": "/ahmednadd/betterworld/static/media/home.27aaf1a48eebc07a50904c597fbcafc6.svg",
+    "index.html": "/ahmednadd/betterworld/index.html",
+    "static/media/heart.svg": "/ahmednadd/betterworld/static/media/heart.b583e3a8d378b16ab61d0a9789800366.svg",
+    "static/media/list.svg": "/ahmednadd/betterworld/static/media/list.59c06f924d63d19aae15af8c2b49a41d.svg",
+    "static/media/light.svg": "/ahmednadd/betterworld/static/media/light.2bf239bdf87133ff8676289f02e92735.svg",
+    "static/media/watch-later.svg": "/ahmednadd/betterworld/static/media/watch-later.241a9a3a301ee86512bc7b65b44dd481.svg",
+    "static/media/search.svg": "/ahmednadd/betterworld/static/media/search.56982c1a4d1ef20556e024945d6badc1.svg",
+    "static/media/close.svg": "/ahmednadd/betterworld/static/media/close.08233535a9321b39bf5f4a13e34fede0.svg",
+    "static/media/logout.svg": "/ahmednadd/betterworld/static/media/logout.2c6021ac5a47a8bd9d9acfb70aa983f1.svg",
+    "static/media/play-list.svg": "/ahmednadd/betterworld/static/media/play-list.b2fcc9472427e25efe9774be25bfecd7.svg",
+    "static/media/menu.svg": "/ahmednadd/betterworld/static/media/menu.113d59e2703636dfe157ec8ec962d598.svg",
+    "main.52e06cfe.css.map": "/ahmednadd/betterworld/static/css/main.52e06cfe.css.map",
+    "main.de75aa31.js.map": "/ahmednadd/betterworld/static/js/main.de75aa31.js.map",
+    "787.9593ae11.chunk.js.map": "/ahmednadd/betterworld/static/js/787.9593ae11.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52e06cfe.css",
+    "static/js/main.de75aa31.js"
+  ]
+}
